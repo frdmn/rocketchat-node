@@ -8,9 +8,9 @@
 A node.js module, which provides an object oriented wrapper for the RocketChat REST API.
 
 RocketChat official website address can be found [here](https://rocket.chat/)  .
-RocketChat REST API document can be found [here](https://rocket.chat/docs/developer-guides/rest-api/). 
+RocketChat REST API document can be found [here](https://rocket.chat/docs/developer-guides/rest-api/).
 
-The Version of this library is in sync with the rocket.chat release. A version of 0.57 means this release was tested against the official docker image of rocket.chat:0.57. 
+The Version of this library is in sync with the rocket.chat release. A version of 0.57 means this release was tested against the official docker image of rocket.chat:0.57.
 
 ## getting started
 
@@ -105,7 +105,7 @@ This Lib library package the following functions:
   - [setTopic](#Groups.setTopic)
   - [setType](#Groups.setType)
   - [unarchive](#Groups.unarchive)
-- [Im](#Im) 
+- [Im](#Im)
   - [close](#Im.close)
   - [history](#Im.history)
   - [list.everyone](#Im.everyone)
@@ -773,7 +773,7 @@ this.rocketChatClient.channels.create(roomName, function (err, body) {});
 
 #### <a id="Channels.getIntegrations"></a>getIntegrations
 
-Retrieves the integrations which the channel has, requires the permission manage-integrations. 
+Retrieves the integrations which the channel has, requires the permission manage-integrations.
 And supports the [Offset and Count Query Parameters](https://rocket.chat/docs/developer-guides/rest-api/offset-and-count-info).
 
 ```js
@@ -895,7 +895,8 @@ this.rocketChatClient.channels.history(roomId, {0, 5}, function (err, body) {});
 Retrieves the information about the channel.
 
 ```js
-this.rocketChatClient.channels.info(roomId, function (err, body) {});
+this.rocketChatClient.channels.info({roomId}, function (err, body) {});
+this.rocketChatClient.channels.info({roomName}, function (err, body) {});
 ```
 
 [Result (https://rocket.chat/docs/developer-guides/rest-api/channels/info)](https://rocket.chat/docs/developer-guides/rest-api/channels/info)
@@ -1471,7 +1472,7 @@ this.rocketChatClient.groups.create(roomName, function (err, body) {});
 
 #### <a id="Groups.getIntegrations"></a>getIntegrations
 
-Retrieves the integrations which the group has, requires the permission manage-integrations. 
+Retrieves the integrations which the group has, requires the permission manage-integrations.
 And supports the [Offset and Count Query Parameters](https://rocket.chat/docs/developer-guides/rest-api/offset-and-count-info).
 
 ```js
@@ -1593,7 +1594,8 @@ this.rocketChatClient.groups.history(roomId, {0, 5}, function (err, body) {});
 Retrieves the information about the private group, only if you’re part of the group.
 
 ```js
-this.rocketChatClient.groups.info(roomId, function (err, body) {});
+this.rocketChatClient.groups.info({roomId}, function (err, body) {});
+this.rocketChatClient.groups.info({roomName}, function (err, body) {});
 ```
 
 [Result (https://rocket.chat/docs/developer-guides/rest-api/groups/info)](https://rocket.chat/docs/developer-guides/rest-api/groups/info)
@@ -2645,4 +2647,3 @@ RocketChatApi Options:
 
 -  achieved  OAuth authentication mode
 -  Add SSL security mode
-
